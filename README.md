@@ -71,6 +71,7 @@ CREATE TABLE "salaries" ("emp_no" int   NOT NULL,
 ## Data Analysis
 
 ### List the employee number, last name, first name, sex, and salary of each employee.
+[Link](https://github.com/xnotynot/sql-challenge/blob/main/EmployeeSQL/DataAnalysis_1_employee_list.png)
 ```
 SELECT a.emp_no, a.last_name, a.first_name, a.sex, b.salaries
 	FROM public.employees as a
@@ -79,6 +80,7 @@ SELECT a.emp_no, a.last_name, a.first_name, a.sex, b.salaries
 ```
 
 ### List the first name, last name, and hire date for the employees who were hired in 1986.
+[Link](https://github.com/xnotynot/sql-challenge/blob/main/EmployeeSQL/DataAnalysis_2_hiredate_1986.png)
 ```
 SELECT first_name, last_name, hire_date
 	FROM public.employees
@@ -86,6 +88,7 @@ SELECT first_name, last_name, hire_date
 	order by hire_date
  ```
 ### List the manager of each department along with their department number, department name, employee number, last name, and first name.
+[Link](https://github.com/xnotynot/sql-challenge/blob/main/EmployeeSQL/DataAnalysis_3_manager_dept_list.png)
 ```
 SELECT a.emp_no, a.dept_no
 	   ,b.dept_name
@@ -96,6 +99,7 @@ SELECT a.emp_no, a.dept_no
 	order by a.emp_no
  ```
 ### List the department number for each employee along with that employee’s employee number, last name, first name, and department name.
+[Link](https://github.com/xnotynot/sql-challenge/blob/main/EmployeeSQL/DataAnalysis_4_emp_dept_list.png)
 ```
 SELECT a.emp_no, a.dept_no
 	   ,b.dept_name
@@ -106,6 +110,7 @@ SELECT a.emp_no, a.dept_no
 	order by a.emp_no
 ```
 ### List first name, last name, and sex of each employee whose first name is Hercules and whose last name begins with the letter B.
+[Link](https://github.com/xnotynot/sql-challenge/blob/main/EmployeeSQL/DataAnalysis_5_emp_name_filter.png)
 ```
 SELECT first_name, last_name, sex
 	FROM public.employees
@@ -114,6 +119,7 @@ SELECT first_name, last_name, sex
 	order by first_name, last_name
 ```
 ### List each employee in the Sales department, including their employee number, last name, and first name.
+[Link](https://github.com/xnotynot/sql-challenge/blob/main/EmployeeSQL/DataAnalysis_6_emp_sales_dept.png)
 ```
 SELECT a.emp_no, a.dept_no
 	   ,c.last_name, c.first_name
@@ -123,6 +129,7 @@ SELECT a.emp_no, a.dept_no
 	order by a.emp_no	
 ```
 ### List each employee in the Sales and Development departments, including their employee number, last name, first name, and department name.
+[Link](https://github.com/xnotynot/sql-challenge/blob/main/EmployeeSQL/DataAnalysis_7_emp_sales_devlopment.png)
 ```
 SELECT a.emp_no
 	   ,b.dept_name
@@ -134,6 +141,7 @@ SELECT a.emp_no
 	order by a.emp_no	
 ```
 ### List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name).
+[Link](https://github.com/xnotynot/sql-challenge/blob/main/EmployeeSQL/DataAnalysis_8_lastname_freq_counts.png)
 ```
 SELECT last_name, count(last_name) as last_name_count
 	from employees
