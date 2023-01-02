@@ -68,3 +68,53 @@ CREATE TABLE "salaries" ("emp_no" int   NOT NULL,
   ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
     REFERENCES "employees" ("emp_no");
 ```
+## Data Analysis
+
+### List the employee number, last name, first name, sex, and salary of each employee.
+```
+SELECT a.emp_no, a.last_name, a.first_name, a.sex, b.salaries
+	FROM public.employees as a
+	inner join public.salaries as b on b.emp_no = a.emp_no
+	order by a.emp_no
+```
+
+### List the first name, last name, and hire date for the employees who were hired in 1986.
+```
+SELECT first_name, last_name, hire_date
+	FROM public.employees
+	where hire_date between '1986-01-01' and '1986-12-31'
+	order by hire_date
+ ```
+### List the manager of each department along with their department number, department name, employee number, last name, and first name.
+```
+SELECT a.emp_no, a.dept_no
+	   ,b.dept_name
+	   ,c.last_name, c.first_name
+	from public.dept_manager as a
+	inner join departments as b on b.dept_no = a.dept_no
+	inner join employees as c on c.emp_no = a.emp_no
+	order by a.emp_no
+ ```
+### List the department number for each employee along with that employee’s employee number, last name, first name, and department name.
+```
+SELECT a.emp_no, a.dept_no
+	   ,b.dept_name
+	   ,c.last_name, c.first_name
+	from public.dept_emp a
+	inner join departments as b on b.dept_no = a.dept_no
+	inner join employees as c on c.emp_no = a.emp_no
+	order by a.emp_no
+```
+### List first name, last name, and sex of each employee whose first name is Hercules and whose last name begins with the letter B.
+```
+SELECT first_name, last_name, sex
+	FROM public.employees
+	where first_name = 'Hercules' and
+		  last_name like 'B%'
+	order by first_name, last_name
+```
+### List each employee in the Sales department, including their employee number, last name, and first name.
+
+### List each employee in the Sales and Development departments, including their employee number, last name, first name, and department name.
+
+### List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name).
