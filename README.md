@@ -1,4 +1,6 @@
 # sql-challenge
+### Submitted by - Anand Shankar - December-2022
+
 ## Data Modeling
 Inspect the CSV files, and then sketch an Entity Relationship Diagram of the tables
 
